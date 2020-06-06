@@ -1,0 +1,7 @@
+[cap03@eimtarqso 2020_05_02]$ ./countersA && ./counters2A
+**higher level for loop saving**
+Total fallas caché nivel 1 = 1875478116
+Total fallas caché nivel 2 = 74912239
+**lower level constant loop saving**
+Total fallas caché nivel 1 = 3078455879
+Total fallas caché nivel 2 = 265801451

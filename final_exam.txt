@@ -1,0 +1,26 @@
+Dear all,
+
+In this note, I would like to provide some guidance and clarification related to the final test. Please note that it is NOT allowed to use the course materials during the test. Using online sources is also strictly forbidden.
+
+The final test is not a validation of the activities; however, it includes all the materials of the course (all the topics covered in the planning that was provided at the beginning of the semester) and also the four assignments. The test usually includes questions related to the assignments but also the key topics of the course. The test consists of five questions and including a programming question that requires providing fragments of code. An example of a question could be describing the memory hierarchy in MPI - the distributed nature of the memory and how to access distributed memory through message-passing would have to be explained (a diagram would help).
+
+The following list of topics is not exhaustive, and I cannot be more explicit, but I hope it can be useful.
+
+- Questions related to the assignments will appear. If you have performed the assignments, they should not be a problem for you. They may include issues related to the environment used or experimental evaluations.
+
+- Essential concepts about parallelism.
+
+- Fundamental concepts of shared memory programming models (e.g., OpenMP), distributed (e.g., MPI), and GPU models. You should be able to program some simple codes (e.g., where it is necessary to use message passing in MPI or data parallelism with OpenMP).
+
+- Main problems of the MPI programming model regarding message passing and memory management in OpenMP.
+
+- Fundamental characteristics of GPU architectures. You should be able to program small codes and therefore understand the main components of the related programming models.
+
+- Fundamental characteristics of high-performance computing architectures.
+
+- Fundamental concepts of high-performance architectures and systems (e.g., related to storage and scheduling policies).
+
+You have one hour for this test. If you get stuck in a question, I recommend you to move to the next one without losing much time; some questions may be more straightforward than others. If you don’t remember some details (e.g., all parameters in an MPI call), provide the essential information and organization/types. General knowledge is expected from reading the materials but not memorizing everything at all.
+
+Best regards,
+Ivan

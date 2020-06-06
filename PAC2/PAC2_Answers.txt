@@ -1,0 +1,35 @@
+Sorry that this will be in all English, but I will translate any parts that need it.
+
+I'm not sure how many of the other questions you've answered, but I am confident now that I can answer most of the "explain why/how" ones in the entire assignment.
+
+I could not stop thinking about this last night, because it is very related to an advanced computer architecture class I took in college (Computer Engineering Major). I also find this topic very interesting personally. I look at the flops and flops2 code more and am 99% confident I have the answer. It comes from processor cache architecture.
+
+On program start, we are allocating and initializing 1000 * 1000 floating point values. each float value is 32 bit. 1000*1000*32 is 32,000,000 bits. /8 = 4,000,000 bytes -> 3,906.25 kb -> ~3.82mb
+
+This is important because processors have very small L1, L2 and L3 caches. L1 is 32k, and is the fastest because it is closest to the processor. L2 is 256k, and L3 is slowest and is 4MB.
+
+In both flops and flops2, they will allocate all the memory in one loop, then initialize it. The big difference is the I and K variable switch.
+
+In flops, the 2d array is filled in sequential order with [i] and [j], 1000 times each from k. The note here is that after that specific location [i][j] is done, it will not need it again in memory and can be moved to a lower cache.
+
+In flops2, the 2d array is filled sequentially in the inner loop entirely. That process is done 1000 times for k on the outside loop. AND because its adding itself to the new value ("read-modify-write" operation), it needs to be able to retrieve the value.
+
+Because this code is sequential, it will fill up the cache and force old values to be moved to lower levels. Then, when needing that value again, it will have to wait until the memory is retrieved from lower level cache until it can continue.
+
+Flops does not have that restriction, and therefore flops2 will run longer, and therefore that is why there is a difference in execution time and MFLOPS (answer to question 5)
+
+Therefore to answer #6, you would probably want to watch the L1, L2, and L3 data cache misses to confirm this. It should show that flops2 has many more misses then flops.
+
+I can help with writing the code to answer 7 and 8. I studied PAPI and OpenMP a little and have an idea now of what they do and how to use them.
+
+https://en.wikipedia.org/wiki/FLOPS
+
+http://www.inf.ufsc.br/~bosco.sobral/ensino/ine5645/OpenMP_Dynamic_Scheduling.pdf
+
+https://bitbucket.org/icl/papi/src/master/src/papi.h
+
+https://ark.intel.com/content/www/us/en/ark/products/52584/intel-xeon-processor-e5603-4m-cache-1-60-ghz-4-80-gt-s-intel-qpi.html
+
+https://en.wikipedia.org/wiki/CPU_cache
+
+https://computing.llnl.gov/tutorials/openMP/

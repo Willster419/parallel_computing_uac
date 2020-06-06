@@ -1,0 +1,11 @@
+### REGULAR ###
+gcc mm2.c -o mm2
+
+### OPENMP  ###
+gcc -fopenmp mm2.c -o mm2
+
+### PAPI    ###
+gcc -I/export/apps/papi/include/ countersopm.c /export/apps/papi/lib/libpapi.a -o countersomp
+
+### MPI     ###
+mpicc hello.c  -o hello

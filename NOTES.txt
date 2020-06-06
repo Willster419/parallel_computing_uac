@@ -1,0 +1,23 @@
+Disable visual studio c++ error highlighting
+  https://stackoverflow.com/questions/51552414/how-to-disable-c-error-checking-in-vs-code
+
+Some good MPI API sites
+  https://docs.microsoft.com/en-us/message-passing-interface/mpi-reduce-function
+
+  https://docs.microsoft.com/en-us/message-passing-interface/mpi-scatter-function
+  https://docs.microsoft.com/en-us/message-passing-interface/mpi-gather-function
+
+  https://docs.microsoft.com/en-us/message-passing-interface/mpi-recv-function
+  https://docs.microsoft.com/en-us/message-passing-interface/mpi-send-function
+
+Some good MPI concept sites
+  https://en.wikipedia.org/wiki/Message_Passing_Interface
+  https://mpitutorial.com/tutorials/mpi-reduce-and-allreduce/
+  https://mpitutorial.com/tutorials/performing-parallel-rank-with-mpi/
+  https://mpitutorial.com/tutorials/mpi-scatter-gather-and-allgather/
+  https://github.com/wesleykendall/mpitutorial/blob/gh-pages/tutorials/mpi-scatter-gather-and-allgather/code/avg.c
+  https://stackoverflow.com/questions/14813595/how-to-use-mpi-reduce-to-sum-different-values-from-different-groups-of-processor
+  https://www.codingame.com/playgrounds/349/introduction-to-mpi/introduction-to-distributed-computing
+  https://www.codingame.com/playgrounds/349/introduction-to-mpi/mpi_status-retrieval
+  https://www.codingame.com/playgrounds/349/introduction-to-mpi/mpi_comm_world-size-and-ranks
+  
