@@ -26,6 +26,8 @@ int main(int argc, char **argv)
   // temp var
   int i;
 
+  long seed;
+
   // Initialize the MPI system
   MPI_Init(&argc, &argv);
 
@@ -41,9 +43,13 @@ int main(int argc, char **argv)
     printf("There are %d total processes running\n", total_active_processes);
   }
 
-  printf("Process %d is creating %d random values starting from address %x\n", process_id, VALUES_PER_PROCESS, &value_list);
+  printf("Process %d is creating %d random values starting from address %x\n", process_id, VALUES_PER_PROCESS, value_list);
+
   // seed each process with new random from the address being different
-  srand((unsigned int) &value_list);
+  // pointers on this system are 32bit wide so let's cast it to a long of 32bit wide
+  // https://stackoverflow.com/a/13551758/3128017
+  seed = (long) value_list;
+  srand(seed);
 
   // init the array of values
   for (i=0; i<VALUES_PER_PROCESS; i++)
