@@ -8,9 +8,9 @@
 #define HEIGHT 30 // col
 #define MOVING_AVERAGE_AMMOUNT 9
 
-void average(int collum);
-void movingAverage(int collum, int row, float **matrix);
-void initMatrix(int width, int height, float *matrix);
+float average(int collum, float matrix[][HEIGHT]);
+//float movingAverage(int collum, int row, float *matrix);
+void initMatrix(int width, int height, float matrix[width][height]);
 void initVector(int width, float *vector);
 
 int main(int argc, char **argv)
@@ -21,6 +21,7 @@ int main(int argc, char **argv)
   float vectorAverage[HEIGHT];
 
   // inits
+  printf("Initialize the main matrix array\n");
   k = 0;
   for(i = 0; i < WIDTH; i++)
   {
@@ -30,16 +31,24 @@ int main(int argc, char **argv)
       matrix[i][j] = 1.0f + (float)k++;
     }
   }
+
+  printf("Initialize the average vector\n");
   initVector(WIDTH, vectorAverage);
+  
+  printf("Initialize the moving average vector\n");
   initMatrix(WIDTH, HEIGHT, matrixMove);
 
   // for each colum, get a average value
+  printf("Get averages of a row for each colum\n");
   for(i = 0; i < WIDTH; i++)
   {
-    vectorAverage[i] = average(i,matrix);
+    vectorAverage[i] = average(i, matrix);
+    printf("Average of vector %d is %f\n",i,vectorAverage[i]);
   }
+  exit(0);
 
   // for each colum for each row get the moving average
+  /*
   for(i = 9; i < WIDTH; i++)
   {
     for(j = 0; j < HEIGHT; j++)
@@ -47,21 +56,22 @@ int main(int argc, char **argv)
       matrixMove[i][j] = movingAverage(i,j,matrix);
     }
   }
+  */
 }
 
-float average(int collum, float *matrix)
+float average(int collum, float matrix[][HEIGHT])
 {
   int i;
-  float average = 0.0f;
+  float average_ = 0.0f;
   for(i = 0; i < HEIGHT; i++)
   {
-    average += matrix[collum][i];
+    average_ += matrix[collum][i];
   }
-  average = average / HEIGHT;
-  return average;
+  average_ = average_ / HEIGHT;
+  return average_;
 }
-
-float movingAverage(int collum, int row, float *matrix)
+/*
+float movingAverage(int collum, int row, float **matrix)
 {
   int i;
   float average = 0.0f;
@@ -72,8 +82,8 @@ float movingAverage(int collum, int row, float *matrix)
   average = average / MOVING_AVERAGE_AMMOUNT;
   return average;
 }
-
-void initMatrix(int width, int height, float *matrix)
+*/
+void initMatrix(int width, int height, float matrix[width][height])
 {
   int i, j = 0;
   for(i = 0; i < width; i++)
