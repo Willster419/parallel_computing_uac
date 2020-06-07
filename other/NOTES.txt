@@ -21,3 +21,6 @@ Some good MPI concept sites
   https://www.codingame.com/playgrounds/349/introduction-to-mpi/mpi_status-retrieval
   https://www.codingame.com/playgrounds/349/introduction-to-mpi/mpi_comm_world-size-and-ranks
   
+CUDA
+  https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html
+  https://www.youtube.com/watch?v=1cHx1baKqq0&t=11s
