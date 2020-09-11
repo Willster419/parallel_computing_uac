@@ -24,3 +24,9 @@ Some good MPI concept sites
 CUDA
   https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html
   https://www.youtube.com/watch?v=1cHx1baKqq0&t=11s
+  https://codeyarns.github.io/tech/2011-02-16-cuda-dim3.html
+
+Good sites on C pointers
+  https://www.geeksforgeeks.org/pass-2d-array-parameter-c/
+  https://www.tutorialspoint.com/cprogramming/c_pointer_to_an_array.htm
+  https://www.studytonight.com/c/pointers-with-array.php
